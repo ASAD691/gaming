@@ -6,55 +6,75 @@
   <title>ASAD GAMING ZONE - Download Your Favorite Games</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
       font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(to right, #1a1a2e, #16213e);
-      color: #f2f2f2;
+      background: linear-gradient(to bottom, #0a0a0a, #14142b);
+      color: #f0f0f0;
     }
     header {
-      background: linear-gradient(to right, #ff0000, #0000ff);
-      padding: 1rem 2rem;
+      background: linear-gradient(135deg, #ff0000, #0000ff);
+      padding: 1.5rem;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
+      text-align: center;
+      box-shadow: 0 0 25px rgba(255, 0, 255, 0.4);
     }
     header h1 {
-      color: #00ff99;
-      font-size: 1.8rem;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
+      color: #00ffff;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 10px #ff00ff;
     }
     .hero {
-      padding: 3rem 2rem;
       text-align: center;
-      background: linear-gradient(to bottom, #1a1a1a, #111);
+      padding: 4rem 1rem 2rem;
+      background: linear-gradient(to right, #1a1a2e, #16213e);
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
     }
     .hero h2 {
-      font-size: 2.5rem;
+      font-size: 3rem;
+      color: #ff4d4d;
       margin-bottom: 1rem;
+    }
+    .hero p {
+      color: #ccc;
+      font-size: 1.1rem;
+    }
+    #searchInput {
+      margin-top: 2rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      width: 320px;
+      font-size: 1rem;
+      border: none;
+      box-shadow: 0 0 15px #00ffff44;
+      background: #111;
+      color: #fff;
     }
     .games-section {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
       gap: 2rem;
-      padding: 2rem;
+      padding: 3rem;
     }
     .game-card {
-      background-color: #1a1a1a;
-      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.85);
+      border-radius: 15px;
       overflow: hidden;
-      transition: 0.3s;
-      box-shadow: 0 0 10px #000;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
     }
     .game-card:hover {
-      transform: scale(1.02);
+      transform: scale(1.03);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
     }
-    .game-card img {
+    .game-card img, .game-card iframe {
       width: 100%;
       height: 160px;
       object-fit: cover;
@@ -63,262 +83,110 @@
       padding: 1rem;
     }
     .game-info h3 {
-      margin: 0 0 0.5rem;
-      color: #ff4d4d;
+      margin-bottom: 0.5rem;
+      color: #00ffff;
+      font-size: 1.2rem;
     }
     .game-info p {
       font-size: 0.9rem;
-      color: #ccc;
+      margin-bottom: 0.3rem;
+      color: #aaa;
     }
     .download-btn {
       display: inline-block;
-      margin-top: 0.5rem;
-      padding: 0.5rem 1rem;
-      background: linear-gradient(to right, #ff0000, #0000ff);
+      margin-top: 0.6rem;
+      padding: 0.6rem 1.2rem;
+      background: linear-gradient(to right, #ff0066, #0066ff);
       color: #fff;
       font-weight: bold;
-      border-radius: 5px;
       text-decoration: none;
-      border: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    .download-btn:hover {
+      background: linear-gradient(to right, #cc0066, #0044cc);
     }
     footer {
       text-align: center;
       padding: 2rem;
-      background-color: #111;
+      background-color: #0f0f0f;
       color: #666;
       font-size: 0.9rem;
+    }
+    @media screen and (max-width: 600px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+      #searchInput {
+        width: 90%;
+      }
     }
   </style>
 </head>
 <body>
-  
-    <div style="margin-top: 1rem; text-align: center;">
-      <input type="text" id="searchInput" placeholder="Search games..." style="padding: 0.5rem 1rem; border-radius: 5px; width: 300px; max-width: 80%; border: none; font-family: 'Orbitron', sans-serif;">
-    </div></header>
-
+  <header>
+    <h1>ASAD GAMING ZONE</h1>
+  </header>
   <section class="hero">
     <h2>Download the Hottest PC Games Now!</h2>
     <p>High-speed downloads. No ads. Totally free.</p>
-      <div class="game-card">
+    <input type="text" id="searchInput" placeholder="Search games...">
+  </section>
+  <section class="games-section">
+    <div class="game-card">
+      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/275850/header.jpg" alt="No Man's Sky">
+      <div class="game-info">
+        <h3>No Man's Sky</h3>
+        <p>Size: 10 GB | Platform: PC | Space Adventure</p>
+        <a href="https://store.steampowered.com/app/275850/No_Mans_Sky/" target="_blank" class="download-btn">Download</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/945360/header.jpg" alt="Among Us">
+      <div class="game-info">
+        <h3>Among Us</h3>
+        <p>Size: 250 MB | Platform: PC | Multiplayer Party</p>
+        <a href="https://store.steampowered.com/app/945360/Among_Us/" target="_blank" class="download-btn">Download</a>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/413710/header.jpg" alt="Doki Doki Literature Club">
+      <div class="game-info">
+        <h3>Doki Doki Literature Club!</h3>
+        <p>Size: 500 MB | Platform: PC | Visual Novel</p>
+        <a href="https://store.steampowered.com/app/698780/Doki_Doki_Literature_Club/" target="_blank" class="download-btn">Download</a>
+      </div>
+    </div>
+    <div class="game-card">
       <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/413150/header.jpg" alt="Stardew Valley">
-      
-        <iframe width="100%" height="160" src="https://www.youtube.com/embed/ot7uXNQskhs" title="Stardew Valley Trailer" frameborder="0" allowfullscreen></iframe>
-        
-        <p>⭐ Rating: 9/10</p>
-        <p>🎮 Tags: Farming, RPG, Casual</p>
+      <div class="game-info">
+        <h3>Stardew Valley</h3>
+        <p>Size: 1 GB | Platform: PC | Farming RPG</p>
         <a href="https://store.steampowered.com/app/413150/Stardew_Valley/" target="_blank" class="download-btn">Download</a>
       </div>
     </div>
-
-    <div class="game-card">
-      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/346110/header.jpg" alt="ARK: Survival Evolved">
-      
-        <iframe width="100%" height="160" src="https://www.youtube.com/embed/aQM8yWoiy5s" title="ARK Trailer" frameborder="0" allowfullscreen></iframe>
-        
-        <p>⭐ Rating: 8.5/10</p>
-        <p>🎮 Tags: Survival, Dinosaurs, Action</p>
-        <a href="https://store.steampowered.com/app/346110/ARK_Survival_Evolved/" target="_blank" class="download-btn">Download</a>
-      </div>
-    </div>
-
-    <div class="game-card">
-      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/105600/header.jpg" alt="Terraria">
-      
-        <iframe width="100%" height="160" src="https://www.youtube.com/embed/w7uOhFTrrq0" title="Terraria Trailer" frameborder="0" allowfullscreen></iframe>
-        
-        <p>⭐ Rating: 9/10</p>
-        <p>🎮 Tags: Sandbox, Crafting, Adventure</p>
-        <a href="https://store.steampowered.com/app/105600/Terraria/" target="_blank" class="download-btn">Download</a>
-      </div>
-    </div>
-
-
-
-  
-    <div class="game-card">
-      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg" alt="Cyber Hunter">
-      <div class="game-info">
-        <h3>Cyber Hunter</h3>
-        <p>Size: 4 GB | Platform: PC | Sci-Fi Battle Royale</p>
-        <a href="https://store.steampowered.com/app/1091500/Cyber_Hunter/" target="_blank" class="download-btn">Download</a>
-      </div>
-    </div>
-
-    <div class="game-card">
-      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/291550/header.jpg" alt="Brawlhalla">
-      <div class="game-info">
-        <h3>Brawlhalla</h3>
-        <p>Size: 350 MB | Platform: PC | Platform Fighter</p>
-        <a href="https://store.steampowered.com/app/291550/Brawlhalla/" target="_blank" class="download-btn">Download</a>
-      </div>
-    </div>
-
-    <div class="game-card">
-      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/230410/header.jpg" alt="Warframe">
-      <div class="game-info">
-        <h3>Warframe</h3>
-        <p>Size: 30 GB | Platform: PC | Co-op Action Shooter</p>
-        <a href="https://store.steampowered.com/app/230410/Warframe/" target="_blank" class="download-btn">Download</a>
-      </div>
-    </div>
-
-
-      
-
-    <div class="game-card">
-      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/252490/header.jpg" alt="Rust">
-      <div class="game-info">
-        <h3>Rust (Free Event)</h3>
-        <p>Size: 20 GB | Platform: PC | Survival</p>
-        <a href="https://store.steampowered.com/app/252490/Rust/" target="_blank" class="download-btn">Download</a>
-      </div>
-    </div>
-
-    <div class="game-card">
-      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/440/header.jpg" alt="Team Fortress 2">
-      <div class="game-info">
-        <h3>Team Fortress 2</h3>
-        <p>Size: 10 GB | Platform: PC | FPS</p>
-        <a href="https://store.steampowered.com/app/440/Team_Fortress_2/" target="_blank" class="download-btn">Download</a>
-      </div>
-    </div>
-
-    <div class="game-card">
-      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/578080/header.jpg" alt="PUBG: Battlegrounds">
-      <div class="game-info">
-        <h3>PUBG: Battlegrounds</h3>
-        <p>Size: 30 GB | Platform: PC | Battle Royale</p>
-        <a href="https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/" target="_blank" class="download-btn">Download</a>
-      </div>
-    </div>
-    <div class="game-card">
-      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1172470/header.jpg" alt="Valorant">
-      <div class="game-info">
-        <h3>Valorant</h3>
-        <p>Size: 8 GB | Platform: PC | Tactical FPS</p>
-        <a href="https://playvalorant.com/" target="_blank" class="download-btn">Download</a>
-      </div>
-    </div>
-
-    
-
-    
-
-    <div class="game-card">
-      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/730/header.jpg" alt="League of Legends">
-      <div class="game-info">
-        <h3>League of Legends</h3>
-        <p>Size: 15 GB | Platform: PC | MOBA</p>
-        <a href="https://www.leagueoflegends.com/en-us/" target="_blank" class="download-btn">Download</a>
-      </div>
-    </div>
-
-    
-      <div class="game-card">
-      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1222670/header.jpg" alt="Spellbreak">
-      <div class="game-info">
-        <h3>Spellbreak</h3>
-        <p>Size: 5 GB | Platform: PC | Magic Battle Royale</p>
-        <a href="https://store.steampowered.com/app/1222670/Spellbreak/" target="_blank" class="download-btn">Download</a>
-      </div>
-    </div>
-
-    <div class="game-card">
-      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/252490/header.jpg" alt="Paladins">
-      <div class="game-info">
-        <h3>Paladins</h3>
-        <p>Size: 30 GB | Platform: PC | Hero Shooter</p>
-        <a href="https://store.steampowered.com/app/444090/Paladins/" target="_blank" class="download-btn">Download</a>
-      </div>
-    </div>
-
-    <div class="game-card">
-      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/703080/header.jpg" alt="Creativerse">
-      <div class="game-info">
-        <h3>Creativerse</h3>
-        <p>Size: 3 GB | Platform: PC | Sandbox Adventure</p>
-        <a href="https://store.steampowered.com/app/280790/Creativerse/" target="_blank" class="download-btn">Download</a>
-      </div>
-    </div>
-
-    <div class="game-card">
-      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/306130/header.jpg" alt="The Elder Scrolls Online">
-      <div class="game-info">
-        <h3>The Elder Scrolls Online (Free Trial)</h3>
-        <p>Size: 85 GB | Platform: PC | MMORPG</p>
-        <a href="https://store.steampowered.com/app/306130/The_Elder_Scrolls_Online/" target="_blank" class="download-btn">Download</a>
-      </div>
-    </div>
-
-    <div class="game-card">
-      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/960090/header.jpg" alt="Crab Game">
-      <div class="game-info">
-        <h3>Crab Game</h3>
-        <p>Size: 200 MB | Platform: PC | Multiplayer Party</p>
-        <a href="https://store.steampowered.com/app/1782210/Crab_Game/" target="_blank" class="download-btn">Download</a>
-      </div>
-    </div>
-
-    <div class="game-card">
-      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/381210/header.jpg" alt="Dead by Daylight">
-      <div class="game-info">
-        <h3>Dead by Daylight (Free Trial)</h3>
-        <p>Size: 40 GB | Platform: PC | Horror Survival</p>
-        <a href="https://store.steampowered.com/app/381210/Dead_by_Daylight/" target="_blank" class="download-btn">Download</a>
-      </div>
-    </div>
-
     <div class="game-card">
       <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1229490/header.jpg" alt="Enlisted">
       <div class="game-info">
         <h3>Enlisted</h3>
-        <p>Size: 12 GB | Platform: PC | WWII FPS</p>
+        <p>Size: 12 GB | Platform: PC | WW2 FPS</p>
         <a href="https://store.steampowered.com/app/1229490/Enlisted/" target="_blank" class="download-btn">Download</a>
       </div>
     </div>
-
-    <div class="game-card">
-      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/594650/header.jpg" alt="Hunt: Showdown">
-      <div class="game-info">
-        <h3>Hunt: Showdown (Free Weekend)</h3>
-        <p>Size: 50 GB | Platform: PC | PvPvE Shooter</p>
-        <a href="https://store.steampowered.com/app/594650/Hunt_Showdown/" target="_blank" class="download-btn">Download</a>
-      </div>
-    </div>
-
-    <div class="game-card">
-      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/628670/header.jpg" alt="Realm Royale Reforged">
-      <div class="game-info">
-        <h3>Realm Royale Reforged</h3>
-        <p>Size: 5 GB | Platform: PC | Fantasy Shooter</p>
-        <a href="https://store.steampowered.com/app/813820/Realm_Royale_Reforged/" target="_blank" class="download-btn">Download</a>
-      </div>
-    </div>
-
-    <div class="game-card">
-      <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1172470/header.jpg" alt="VALORANT">
-      <div class="game-info">
-        <h3>VALORANT</h3>
-        <p>Size: 10 GB | Platform: PC | Tactical Shooter</p>
-        <a href="https://playvalorant.com/" target="_blank" class="download-btn">Download</a>
-      </div>
-    </div>
-
-
-
+  </section>
   <footer>
     &copy; 2025 ASAD GAMING ZONE. All rights reserved.
   </footer>
-<script>
-  const searchInput = document.getElementById("searchInput");
-  searchInput.addEventListener("input", function () {
-    const filter = this.value.toLowerCase();
-    const cards = document.querySelectorAll(".game-card");
-    cards.forEach(card => {
-      const title = card.querySelector("h3").textContent.toLowerCase();
-      card.style.display = title.includes(filter) ? "block" : "none";
+  <script>
+    const searchInput = document.getElementById("searchInput");
+    searchInput.addEventListener("input", function () {
+      const filter = this.value.toLowerCase();
+      const cards = document.querySelectorAll(".game-card");
+      cards.forEach(card => {
+        const title = card.querySelector("h3")?.textContent?.toLowerCase() || "";
+        card.style.display = title.includes(filter) ? "block" : "none";
+      });
     });
-  });
-</script>
-
+  </script>
+</body>
 </html>
